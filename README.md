@@ -1,6 +1,5 @@
 # 📱 EXPRESS_MONGO-MAIN
 
-Bonjour l'utilisation du webhook.
 
 ## 🚀 Description
 **EXPRESS_MONGO-MAIN** est une **API REST** construite avec **Node.js**, **Express** et **MongoDB** (via Mongoose).  
