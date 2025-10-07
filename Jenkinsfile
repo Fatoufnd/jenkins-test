@@ -76,10 +76,23 @@ pipeline {
             }
         }
     }
-
-    post {
+    
+post {
+        success {
+            emailext(
+                subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Pipeline réussi\nDétails : ${env.BUILD_URL}",
+                to: "fa091999@gmail.com"
+            )
+        }
+        failure {
+            emailext(
+                subject: "Build FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Le pipeline a échoué\nDétails : ${env.BUILD_URL}",
+                to: "fa091999@gmail.com"
+            )
+        }
         always {
             sh 'docker logout'
         }
-    }
 }
